@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Janhavi Kashyap | Graphic Designer Portfolio</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fefefe;
+            color: #1a1a2e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* header / navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #eaeef2;
+        }
+
+        .logo h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #1e2b3c, #2c3e50);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c3e50;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #e67e22;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            background: #ffffff;
+            border-radius: 2rem;
+            padding: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+        }
+
+        .hero-content {
+            flex: 2;
+        }
+
+        .hero-badge {
+            background: #ffe6d5;
+            color: #e67e22;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+            background: linear-gradient(to right, #1e2b3c, #2d4a6e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-titles {
+            font-size: 1.2rem;
+            color: #4a627a;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .hero-titles span {
+            background: #f0f4f8;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .hero-desc {
+            margin: 1.5rem 0;
+            color: #334155;
+            max-width: 550px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-info a, .contact-info span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #2c3e50;
+            text-decoration: none;
+            background: #f8fafc;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            transition: all 0.2s;
+        }
+
+        .contact-info a:hover {
+            background: #e67e22;
+            color: white;
+        }
+
+        .hero-avatar {
+            flex: 1;
+            min-width: 180px;
+            background: #f1f5f9;
+            border-radius: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            box-shadow: 0 12px 20px -12px rgba(0,0,0,0.1);
+        }
+
+        .avatar-placeholder {
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(145deg, #cbd5e1, #e2e8f0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #2c3e50;
+            box-shadow: inset 0 1px 3px #0001, 0 8px 15px -6px #0002;
+        }
+
+        /* section styles */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: #e67e22;
+            border-radius: 3px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
+            transition: 0.25s ease;
+            border: 1px solid #edf2f7;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
+            border-color: #e2e8f0;
+        }
+
+        .card-icon {
+            font-size: 2.3rem;
+            color: #e67e22;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+        .skill-tags span {
+            background: #eef2ff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #1f3a5f;
+        }
+
+        .strength-list {
+            list-style: none;
+        }
+        .strength-list li {
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .strength-list li i {
+            color: #e67e22;
+            width: 20px;
+        }
+
+        .project-item {
+            margin-bottom: 1.8rem;
+            border-left: 3px solid #e67e22;
+            padding-left: 1rem;
+        }
+        .project-item h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        .project-item p {
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        .interest-lang {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .interest-box, .lang-box {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 1.2rem;
+            flex: 1;
+        }
+        .interest-box h4, .lang-box h4 {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 2rem 2rem 0 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .contact-info {
+                justify-content: center;
+            }
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .section-title:after {
+                width: 40%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <div class="navbar">
+            <div class="logo">
+                <h2>Janhavi Kashyap</h2>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#strengths">Strengths</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <!-- Hero / Profile Section -->
+        <div id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-palette"></i> Graphic Designer & Creative Thinker</div>
+                <h1>Janhavi Kashyap</h1>
+                <div class="hero-titles">
+                    <span>Branding • Modern & Minimal</span>
+                    <span>Canva Expert</span>
+                    <span>Digital Design</span>
+                </div>
+                <p class="hero-desc">
+                    Creative and detail-oriented fresher Graphic Designer with strong skills in Canva, typography, social media design, branding concepts, and visual storytelling. Passionate about creating modern and engaging designs for digital platforms.
+                </p>
+                <div class="contact-info">
+                    <a href="mailto:janhavi.kashyap.work@gmail.com"><i class="fas fa-envelope"></i> janhavi.kashyap.work</a>
+                    <a href="tel:+917000794663"><i class="fas fa-phone-alt"></i> +91 70007 94663</a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+                <div class="contact-info" style="margin-top: 0.5rem;">
+                    <span><i class="fas fa-map-marker-alt"></i> Indore, Madhya Pradesh, India</span>
+                </div>
+            </div>
+            <div class="hero-avatar">
+                <div class="avatar-placeholder">
+                    <i class="fas fa-gem"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section (replaces extracurricular activities exactly as requested) -->
+        <div id="projects">
+            <h2 class="section-title">⭐ Featured Projects</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-images"></i></div>
+                    <h3>Social Media Creatives & Banners</h3>
+                    <p>Designed engaging social media creatives and promotional banners using <strong>Canva and Photoshop</strong>. Delivered high-impact visuals for digital campaigns, boosting brand consistency and audience engagement.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-code"></i></div>
+                    <h3>Responsive Portfolio Website</h3>
+                    <p>Developed a fully responsive portfolio website using <strong>HTML, CSS, and JavaScript</strong>. Features modern UI, smooth navigation, and showcases design projects — optimized for all devices.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-font"></i></div>
+                    <h3>Branding & Typography Posters</h3>
+                    <p>Created branding and typography-based poster designs for digital campaigns. Focused on minimal aesthetics, hierarchy, and modern visual language using <strong>Adobe Illustrator & Canva</strong>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills + Strengths Combined row -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 2rem; margin: 3rem 0;" id="skills">
+            <!-- Skills Card -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-pen-fancy"></i></div>
+                <h3>Design & Tools</h3>
+                <div class="skill-tags">
+                    <span>Brand Identity</span><span>Creative Concepts</span><span>Social Media Design</span>
+                    <span>Typography & Layout</span><span>Poster/Banner/Ads</span><span>Canva</span>
+                    <span>Adobe Photoshop</span><span>Adobe Illustrator</span><span>Design Trend Research</span>
+                </div>
+                <div style="margin-top: 1.2rem;">
+                    <p><i class="fas fa-graduation-cap" style="color:#e67e22;"></i> <strong>Qualification:</strong> Bachelor of Computer Applications (BCA) — Govt. Holkar Science College, Indore (DAVV) | Expected 2028</p>
+                </div>
+            </div>
+
+            <!-- Strengths Card -->
+            <div class="card" id="strengths">
+                <div class="card-icon"><i class="fas fa-star-of-life"></i></div>
+                <h3>Strengths & Soft Skills</h3>
+                <ul class="strength-list">
+                    <li><i class="fas fa-lightbulb"></i> Problem-Solving Ability</li>
+                    <li><i class="fas fa-brain"></i> Creative Thinking</li>
+                    <li><i class="fas fa-search"></i> Attention to Detail</li>
+                    <li><i class="fas fa-clock"></i> Time Management & Team Collaboration</li>
+                    <li><i class="fas fa-chart-line"></i> Design Trend Research</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Interests & Languages + extra achievements -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 2rem; margin: 2rem 0;">
+            <div class="interest-box">
+                <h4><i class="fas fa-heart" style="color:#e67e22;"></i> Interests & Hobbies</h4>
+                <ul style="list-style: none; margin-top: 0.5rem;">
+                    <li><i class="fas fa-paintbrush"></i> Creative Designing & Handmade Crafts</li>
+                    <li><i class="fas fa-futbol"></i> Sports and Outdoor Activities</li>
+                    <li><i class="fas fa-plane"></i> Travelling & Exploring New Ideas</li>
+                </ul>
+            </div>
+            <div class="lang-box">
+                <h4><i class="fas fa-language"></i> Languages Known</h4>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem;">
+                    <span class="skill-tags" style="background:#eef2ff;"><i class="fas fa-comment"></i> Hindi (Native)</span>
+                    <span class="skill-tags" style="background:#eef2ff;"><i class="fas fa-comment-dots"></i> English (Fluent)</span>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <p><i class="fas fa-trophy" style="color:#e67e22;"></i> <strong>Extra:</strong> Represented Madhya Pradesh in national-level sports; Hackathon collaborator with "404 FOUNDERS" – Social Media Impact Analyzer.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- More detailed project evidence: exactly replacing extracurricular activities with project details structured -->
+        <div style="background: #f9fbfd; border-radius: 2rem; padding: 1.8rem; margin: 1rem 0 2rem 0;">
+            <h3 style="display: flex; align-items: center; gap: 0.6rem;"><i class="fas fa-code-branch"></i> Project Highlights</h3>
+            <div style="margin-top: 1rem;">
+                <div class="project-item">
+                    <h4>📱 Social Media Impact + Creatives Suite</h4>
+                    <p>Designed 20+ social media creatives and promotional banners using Canva and Photoshop for mock campaigns & college fests. Optimized layouts for Instagram, LinkedIn, and web banners – achieved modern minimal aesthetics and brand alignment.</p>
+                </div>
+                <div class="project-item">
+                    <h4>💻 Personal Portfolio Website (this site)</h4>
+                    <p>Developed responsive portfolio using HTML5, CSS3 grid/flex, and vanilla JavaScript. Fully mobile-first, interactive contact section, and project gallery representation — coded from scratch as part of digital presence.</p>
+                </div>
+                <div class="project-item">
+                    <h4>🎨 Typography Poster Series – "Digital Minimalism"</h4>
+                    <p>Created 6 poster designs focusing on bold typography, hierarchy, and color psychology. Used Adobe Illustrator and Canva for brand-centric campaign storytelling. Selected for college design exhibition.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact / Get in touch simple footer area -->
+        <div id="contact" style="background: #ffffff; border-radius: 1.8rem; padding: 2rem; margin: 2rem 0 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.02); border: 1px solid #ecf3f9;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+                <div>
+                    <h3 style="font-size: 1.6rem;">Let's collaborate ✨</h3>
+                    <p>Open for internships & entry-level graphic design roles.</p>
+                </div>
+                <div>
+                    <a href="mailto:janhavi.kashyap.work@gmail.com" style="background: #e67e22; color: white; text-decoration: none; padding: 0.8rem 1.8rem; border-radius: 60px; font-weight: 600; display: inline-flex; gap: 0.5rem;"><i class="fas fa-paper-plane"></i> janhavi.kashyap.work@gmail.com</a>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: space-between; border-top: 1px solid #eef2f5; padding-top: 1.5rem;">
+<div><i class="fab fa-linkedin"></i> linkedin.com/in/janhavi-kashyap</div>
+                <div><i class="fab fa-github"></i> github.com/Janhavikashyap</div>
+                <div><i class="fas fa-map-marker-alt"></i> Indore, Madhya Pradesh, India</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 Janhavi Kashyap — Graphic Designer | Built with HTML, CSS, JavaScript — Modern & Minimal Portfolio</p>
+        </footer>
+    </div>
+
+    <!-- simple JS for smooth scroll & dynamic year (optional) -->
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('.nav-links a, .hero-content a[href^="#"], footer a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e)                 {
+                const targetId = this.getAttribute('href');
+                if(targetId && targetId !== '#' && targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+        // Additional small interaction
+        console.log("Portfolio ready — inspired by Janhavi's resume & projects");
+    </script>
+</body>
+</html>
